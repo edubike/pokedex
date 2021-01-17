@@ -5,6 +5,8 @@
     <title>Index</title>
 
     <!-- Bootstrap CSS -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="../static/css/bootstrap.css" rel="stylesheet">
     <link rel="icon" href="../static/img/pokebola.png" type="image/png"/>
 </head>
@@ -38,12 +40,13 @@
         </div>
         <div class="container">
 
-            <div th:each="pokemon:${pokemons}">
+
+             th:each="pokemon:${pokemons}"
                 <div class="card" style="width: 18rem;">
                     <a href="pokemon.html"><img src="../static/img/pica.png" class="card-img-top" alt="..."></a>
                     <div class="card-body">
-                        <h5 class="card-title">${pokemons.nombre}</h5>
-                        <p class="card-text">${pokemons.nombre} es un poquemon ${pokemons.tipo}</p>
+                        <h5 class="card-title">th:text="${pokemons.nombre}"</h5>
+                        <p class="card-text">th:text="${pokemons.nombre}" es un poquemon th:text="${pokemons.tipo}"</p>
                         <a class="btn btn-primary" type="button" href="edit.html">Editar</a>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Borrar
@@ -70,8 +73,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
 
         </div>
     </div>
