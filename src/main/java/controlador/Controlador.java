@@ -21,7 +21,7 @@ public class Controlador {
     public String listar(Model model){
 
         List<Pokemon> pokemons = service.Listar();
-        model.addAttribute("persona",pokemons);
+        model.addAttribute("pokemons",pokemons);
         return "index";
     }
 
