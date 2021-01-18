@@ -22,7 +22,8 @@ public class PokemonServicio implements IPokemonServicio {
 
     @Override
     public Optional<Pokemon> listarId(int id) {
-        return Optional.empty();
+
+        return data.findById(id);
     }
 
     @Override
