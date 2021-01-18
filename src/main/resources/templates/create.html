@@ -13,7 +13,6 @@
 <!--Navbar it is for search a result-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <form th:action="@{/save}" th:objeto="${pokemon}" method ="POST">
         <a class="navbar-brand" href="index.html">
             <img src="../static/img/pokebola.png" alt="" width="30" height="30" class="d-inline-block align-top">
             Pokédex
@@ -28,7 +27,6 @@
                 </li>
             </ul>
         </div>
-        </form>
     </div>
 </nav>
 <br/>
@@ -37,7 +35,7 @@
         <h3>Crea un nuevo pokemón</h3>
     </div>
     <!--Formulario para crear un pokemón, datos propios del pokemón -->
-    <form>
+    <form th:action="@{/save}" th:objeto="${pokemon}" method ="POST">
         <div class="row">
             <div class="mb-3 row">
                 <!--Input para ingresar el nombre-->
