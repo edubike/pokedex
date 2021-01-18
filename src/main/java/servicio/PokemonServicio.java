@@ -39,5 +39,7 @@ public class PokemonServicio implements IPokemonServicio {
     @Override
     public void delete(int id) {
 
+        data.deleteById(id);
+
     }
 }
