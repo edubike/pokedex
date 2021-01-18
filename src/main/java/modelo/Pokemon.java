@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class Pokemon {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String nombre;
