@@ -41,11 +41,11 @@ public class Controlador {
         return "redirect:/listar";
     }
 
-    @GetMapping("/editar/{pokemons.id}")
+    @GetMapping("/editar/{id}")
     public String editar(@PathVariable int id, Model model) {
         Optional<Pokemon> pokemon = service.listarId(id);
         model.addAttribute("pokemon", pokemon);
-        return "form";
+        return "edit";
     }
     @GetMapping("/eliminar/{id}")
     public String delete(Model model,@PathVariable int id){
