@@ -30,10 +30,10 @@ public class PokemonServicio implements IPokemonServicio {
     public int save(Pokemon p) {
         int res=0;
         Pokemon pokemon=data.save(p);
-        if(pokemon.equals(null)){
+        if(!pokemon.equals(null)){
             res=1;
         }
-        return 0;
+        return res;
     }
 
     @Override
