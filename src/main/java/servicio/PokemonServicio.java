@@ -17,7 +17,6 @@ public class PokemonServicio implements IPokemonServicio {
 
     @Override
     public List<Pokemon> Listar() {
-
         return (List<Pokemon>)data.findAll();
     }
 
@@ -28,6 +27,11 @@ public class PokemonServicio implements IPokemonServicio {
 
     @Override
     public int save(Pokemon p) {
+        int res=0;
+        Pokemon pokemon=data.save(p);
+        if(pokemon.equals(null)){
+            res=1;
+        }
         return 0;
     }
 

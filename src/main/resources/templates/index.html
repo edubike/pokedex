@@ -41,12 +41,12 @@
         <div class="container">
 
 
-             th:each="pokemon:${pokemons}"
+            th:each="pokemon:${pokemons}"
                 <div class="card" style="width: 18rem;">
                     <a href="pokemon.html"><img src="../static/img/pica.png" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">th:text="${pokemons.nombre}"</h5>
-                        <p class="card-text">th:text="${pokemons.nombre}" es un poquemon th:text="${pokemons.tipo}"</p>
+                        <p class="card-text">th:text="${pokemons.nombre}" es un Pokemon th:text="${pokemons.tipo}"</p>
                         <a class="btn btn-primary" type="button" href="edit.html">Editar</a>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Borrar
@@ -73,7 +73,6 @@
                         </div>
                     </div>
                 </div>
-
         </div>
     </div>
 </div>

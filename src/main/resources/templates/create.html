@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Crear pokemon</title>
     <!-- Bootstrap CSS -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -13,6 +13,7 @@
 <!--Navbar it is for search a result-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+        <form th:action="@{/save}" th:objeto="${pokemon}" method ="POST">
         <a class="navbar-brand" href="index.html">
             <img src="../static/img/pokebola.png" alt="" width="30" height="30" class="d-inline-block align-top">
             Pokédex
@@ -27,6 +28,7 @@
                 </li>
             </ul>
         </div>
+        </form>
     </div>
 </nav>
 <br/>
