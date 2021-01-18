@@ -1,8 +1,8 @@
-package servicio;
+package com.pokedex.pokemon.servicio;
 
-import interfaceServicio.IPokemonServicio;
-import interfaces.IPokemon;
-import modelo.Pokemon;
+import com.pokedex.pokemon.interfaceServicio.IPokemonServicio;
+import com.pokedex.pokemon.interfaces.IPokemon;
+import com.pokedex.pokemon.modelo.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

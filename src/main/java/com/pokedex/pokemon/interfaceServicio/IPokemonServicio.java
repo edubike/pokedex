@@ -1,6 +1,6 @@
-package interfaceServicio;
+package com.pokedex.pokemon.interfaceServicio;
 
-import modelo.Pokemon;
+import com.pokedex.pokemon.modelo.Pokemon;
 
 import java.util.List;
 import java.util.Optional;

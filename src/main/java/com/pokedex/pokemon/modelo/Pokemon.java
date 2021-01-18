@@ -1,4 +1,4 @@
-package modelo;
+package com.pokedex.pokemon.modelo;
 
 
 import javax.persistence.*;
@@ -12,6 +12,7 @@ public class Pokemon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+
     private String nombre;
     private String tipo;
     private int peso;
@@ -22,18 +23,17 @@ public class Pokemon {
     private int defensa;
     private int especial;
     private int velocidad;
-    private String nombre_movimiento;
-    private String descripcion_movimiento;
-    private int precision_movimiento;
+    private String nombremovimiento;
+    private String descripcionmovimiento;
+    private int precisionmovimiento;
     private int carga;
-    private String nombre_evolucion;
-    private String descripciom_evolucion;
-    private  byte imagen;
+    private String nombreevolucion;
+    private String descripciomevolucion;
 
     public Pokemon() {
     }
 
-    public Pokemon(int id, String nombre, String tipo, int peso, int altura, String descripcion, int vida, int ataque, int defensa, int especial, int velocidad, String nombre_movimiento, String descripcion_movimiento, int precision_movimiento, int carga, String nombre_evolucion, String descripciom_evolucion, byte imagen) {
+    public Pokemon(int id, String nombre, String tipo, int peso, int altura, String descripcion, int vida, int ataque, int defensa, int especial, int velocidad, String nombre_movimiento, String descripcion_movimiento, int precision_movimiento, int carga, String nombre_evolucion, String descripciom_evolucion) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -45,13 +45,12 @@ public class Pokemon {
         this.defensa = defensa;
         this.especial = especial;
         this.velocidad = velocidad;
-        this.nombre_movimiento = nombre_movimiento;
-        this.descripcion_movimiento = descripcion_movimiento;
-        this.precision_movimiento = precision_movimiento;
+        this.nombremovimiento = nombre_movimiento;
+        this.descripcionmovimiento = descripcion_movimiento;
+        this.precisionmovimiento = precision_movimiento;
         this.carga = carga;
-        this.nombre_evolucion = nombre_evolucion;
-        this.descripciom_evolucion = descripciom_evolucion;
-        this.imagen = imagen;
+        this.nombreevolucion = nombre_evolucion;
+        this.descripciomevolucion = descripciom_evolucion;
     }
 
     public int getId() {
@@ -143,27 +142,27 @@ public class Pokemon {
     }
 
     public String getNombre_movimiento() {
-        return nombre_movimiento;
+        return nombremovimiento;
     }
 
     public void setNombre_movimiento(String nombre_movimiento) {
-        this.nombre_movimiento = nombre_movimiento;
+        this.nombremovimiento = nombre_movimiento;
     }
 
     public String getDescripcion_movimiento() {
-        return descripcion_movimiento;
+        return descripcionmovimiento;
     }
 
     public void setDescripcion_movimiento(String descripcion_movimiento) {
-        this.descripcion_movimiento = descripcion_movimiento;
+        this.descripcionmovimiento = descripcion_movimiento;
     }
 
     public int getPrecision_movimiento() {
-        return precision_movimiento;
+        return precisionmovimiento;
     }
 
     public void setPrecision_movimiento(int precision_movimiento) {
-        this.precision_movimiento = precision_movimiento;
+        this.precisionmovimiento = precision_movimiento;
     }
 
     public int getCarga() {
@@ -175,26 +174,19 @@ public class Pokemon {
     }
 
     public String getNombre_evolucion() {
-        return nombre_evolucion;
+        return nombreevolucion;
     }
 
     public void setNombre_evolucion(String nombre_evolucion) {
-        this.nombre_evolucion = nombre_evolucion;
+        this.nombreevolucion = nombre_evolucion;
     }
 
     public String getDescripciom_evolucion() {
-        return descripciom_evolucion;
+        return descripciomevolucion;
     }
 
     public void setDescripciom_evolucion(String descripciom_evolucion) {
-        this.descripciom_evolucion = descripciom_evolucion;
+        this.descripciomevolucion = descripciom_evolucion;
     }
 
-    public byte getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(byte imagen) {
-        this.imagen = imagen;
-    }
 }

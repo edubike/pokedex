@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -8,15 +8,14 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="../static/css/bootstrap.css" rel="stylesheet">
-    <link rel="icon" href="../static/img/pokebola.png" type="image/png"/>
+    <link rel="icon" src="http://www.pngplay.com/wp-content/uploads/2/Pokeball-PNG-Photo-Image.png" type="image/png"/>
 </head>
 <body>
-
 <!--Navbar it is for search a result-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-            <img src="../static/img/pokebola.png" alt="" width="30" height="30" class="d-inline-block align-top">
+            <img src="http://www.pngplay.com/wp-content/uploads/2/Pokeball-PNG-Photo-Image.png" alt="" width="30" height="30" class="d-inline-block align-top">
             Pokédex
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -25,7 +24,7 @@
                     <a class="nav-link " aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="create.html">Crear un pokemón</a>
+                    <a  th:href="@{/create}" class="nav-link">Crear un pokemón</a>
                 </li>
             </ul>
         </div>
@@ -40,46 +39,44 @@
         </div>
         <div class="container">
 
-            <table>
-                <tr th:each="pokemon:${pokemons}">
-                    <td>
-                        <div class="card" style="width: 18rem;">
-                            <a href="pokemon.html"><img src="../static/img/pica.png" class="card-img-top" alt="..."></a>
-                            <div class="card-body">
-                                <h5 class="card-title" th:text="${pokemons.nombre}"></h5>
-                                <div class="card-text">
-                                    <label th:text="${pokemons.nombre}+${pokemons.id}"></label>
-                                    <label>es un Pokemon</label>
-                                    <label th:text="${pokemons.tipo}"></label>
-                                </div>
-                                <a th:href="@{/editar}+${pokemons.id}" class="btn btn-primary" type="button">Editar</a>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Borrar
-                                </button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">¿Desea borrar este pokemón?</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Este pokemón será eliminado de tu Pokedéx
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button onclick="eliminar([[${pokemons.id}]])" type="button" class="btn btn-primary">Borrar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+
+               <div th:each="pokemon:${pokemons}">
+                   <div class="card" style="width: 18rem;">
+                       <a href="pokemon.html"><img src="../static/img/pica.png" class="card-img-top" alt="..."></a>
+                       <div class="card-body">
+                           <h5 class="card-title" th:text="${pokemons.nombre}"></h5>
+                           <div class="card-text">
+                               <label th:text="${pokemons.nombre}+${pokemons.id}"></label>
+                               <label>es un Pokemon</label>
+                               <label th:text="${pokemons.tipo}"></label>
+                           </div>
+                           <a th:href="@{/editar}+${pokemons.id}" class="btn btn-primary" type="button">Editar</a>
+                           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                               Borrar
+                           </button>
+                           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                               <div class="modal-dialog">
+                                   <div class="modal-content">
+                                       <div class="modal-header">
+                                           <h5 class="modal-title" id="exampleModalLabel">¿Desea borrar este pokemón?</h5>
+                                           <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                   aria-label="Close"></button>
+                                       </div>
+                                       <div class="modal-body">
+                                           Este pokemón será eliminado de tu Pokedéx
+                                       </div>
+                                       <div class="modal-footer">
+                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                           <button onclick="eliminar([[${pokemons.id}]])" type="button" class="btn btn-primary">Borrar</button>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
 
         </div>
     </div>
